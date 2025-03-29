@@ -74,10 +74,17 @@ export default function Footer() {
                   <p className="text-gray-400 mb-4">
                     Subscribe to stay updated with my latest projects and tech articles.
                   </p>
-                  <form className="space-y-4">
+                  <form 
+                    action="https://technologywebdev15.substack.com/subscribe" 
+                    method="GET"
+                    target="_blank"
+                    className="space-y-4"
+                  >
                     <input
                       type="email"
+                      name="email"
                       placeholder="Enter your email"
+                      required
                       className="w-full px-4 py-3 bg-[#252525] rounded-lg focus:ring-2 focus:ring-emerald-500 
                         focus:outline-none transition-colors text-white"
                     />
