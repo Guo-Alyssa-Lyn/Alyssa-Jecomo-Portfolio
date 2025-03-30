@@ -587,11 +587,20 @@ function App() {
           <div className="space-y-6">
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-emerald-500">Newsletter in the Works</h3>
-                  <span className="text-gray-400 text-sm">March 28, 2025</span>
+                  <h3 className="text-xl font-semibold text-emerald-500">📂 Working on a New Development Project</h3>
+                  <span className="text-gray-400 text-sm">March 30, 2025</span>
                 </div>
                 <p className="text-gray-300">
-                  The newsletter is currently in the works and will be launching soon! Stay tuned for updates and be the first to subscribe.
+                  I am currently collaborating with a client on a new development project, focusing on delivering innovative and tailored solutions.
+                </p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-semibold text-emerald-500">📢 Our Newsletter Has Launched!</h3>
+                  <span className="text-gray-400 text-sm">March 30, 2025</span>
+                </div>
+                <p className="text-gray-300">
+                  Stay updated with the latest web development insights, tips, and trends delivered straight to your inbox. <strong>Subscribe now and never miss an update!</strong>
                 </p>
               </div>
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
@@ -612,16 +621,6 @@ function App() {
               <p className="text-gray-300">
                 Completed a web-based POS, inventory, and billing system using React, TypeScript, Tailwind CSS, and a serverless 
                 PostgreSQL database. It manages products, users, sales, and billing, with built-in business analytics charts for insights.
-              </p>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-emerald-500">Completion of Web-Based Clinic Management System Project</h3>
-                <span className="text-gray-400 text-sm">Decemeber 23, 2024</span>
-              </div>
-              <p className="text-gray-300">
-                Successfully built a web-based Clinic Management System to manage staff, appointments, patient records, doctor schedules, 
-                and payments, ensuring efficient healthcare operations.
               </p>
             </div>
           </div>
