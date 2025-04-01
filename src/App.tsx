@@ -3,7 +3,6 @@ import { Code2, Cuboid, Palette, BarChart3, Mail, Phone, MapPin, BadgeAlert, Pen
 import { useTypewriter } from './hooks/useTypewriter';
 import { useScrollLock } from './hooks/useScrollLock';
 import { useLocation } from "react-router-dom";
-// import { useParams as useRouterParams } from 'react-router-dom';
 import Navbar from "./Navbar"; 
 import Footer from "./Footer";
 import { useEffect as reactUseEffect } from 'react';
@@ -168,53 +167,6 @@ function App() {
   //     content: "Full content for Saying Goodbye to My First Website Portfolio...",
   //   },
   // ];
-
-  // const BlogPage = () => {
-  //   const { slug } = useParams();
-  //   const post = blogPosts.find((post) => post.slug === slug);
-  
-  //   if (!post) {
-  //     return <p className="text-center text-white">Post not found.</p>;
-  //   }
-  
-  //   return (
-  //     <div className="container mx-auto px-8 py-16 text-white">
-  //       <img src={post.image} alt={post.title} className="w-full h-96 object-cover rounded-lg mb-8" />
-  //       <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
-  //       <p className="text-gray-500 text-sm">{post.date} • {post.readTime} • {post.category}</p>
-  //       <p className="text-lg text-gray-400 mt-6">{post.content}</p>
-  //     </div>
-  //   );
-  // };
-
-  // const BlogList = () => {
-  //   return (
-  //     <>
-  //       {/* Blog Section */}
-  //       <section id="blog" className="py-32 bg-[#1f1f1f] text-white">
-  //         <div className="container mx-auto px-8">
-  //           <div className="text-center mb-16">
-  //             <h2 className="text-4xl lg:text-5xl text-emerald-500 font-bold mb-6">Latest Articles</h2>
-  //             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-  //               Sharing insights, experiences, and knowledge about web development, design, and technology.
-  //             </p>
-  //           </div>
-  
-  //           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-  //             {blogPosts.map((post, index) => (
-  //               <BlogPost key={index} {...post} />
-  //             ))}
-  //           </div>
-  //         </div>
-  //       </section>
-  
-  //       {/* Blog Post Page (Only Show If a Slug Exists in URL) */}
-  //       <Routes>
-  //         <Route path="/blog/:slug" element={<BlogPage />} />
-  //       </Routes>
-  //     </>
-  //   );
-  // };
 
   interface HandleSubmitEvent extends FormEvent<HTMLFormElement> {}
 
@@ -566,13 +518,6 @@ function App() {
         </div>
       </section>
 
-      
-      
-      {/* Blog Section */}
-      {/* <Routes>
-        <Route path="/" element={<BlogList />} />
-        <Route path="/blog/:slug" element={<BlogPage />} />
-      </Routes> */}
 
 
       {/* Announcements Section */}
@@ -587,11 +532,11 @@ function App() {
           <div className="space-y-6">
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-emerald-500">📂 Working on a New Development Project</h3>
-                  <span className="text-gray-400 text-sm">March 30, 2025</span>
+                  <h3 className="text-xl font-semibold text-emerald-500">Seeking Exciting New Projects 🚀</h3>
+                  <span className="text-gray-400 text-sm">April 01, 2025</span>
                 </div>
                 <p className="text-gray-300">
-                  I am currently collaborating with a client on a new development project, focusing on delivering innovative and tailored solutions.
+                  Passionate web developer available for new opportunities. Let's collaborate to build innovative and high-quality digital solutions!
                 </p>
             </div>
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
