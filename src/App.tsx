@@ -1,5 +1,5 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
-import { Code2, Cuboid, Palette, BarChart3, Mail, Phone, MapPin, BadgeAlert, Pen, Send, Github, ChevronDown, ChevronUp } from 'lucide-react';
+import { Code2, Cuboid, Palette, BarChart3, Mail, Phone, MapPin, BadgeAlert, Pen, Send, Github, ChevronDown, ChevronUp, ChevronRight, Calendar, Clock } from 'lucide-react';
 import { useTypewriter } from './hooks/useTypewriter';
 import { useScrollLock } from './hooks/useScrollLock';
 import { useLocation } from "react-router-dom";
@@ -42,15 +42,15 @@ interface TechStackItem {
   category: string;
 }
 
-// interface BlogPostProps {
-//   image: string;
-//   title: string;
-//   excerpt: string;
-//   date: string;
-//   readTime: string;
-//   category: string;
-//   slug: string;
-// }
+interface BlogPostProps {
+  image: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  category: string;
+  slug: string;
+}
 
 export const useScrollToSection = () => {
   const location = useLocation();
@@ -143,38 +143,26 @@ function App() {
     }
   ];
 
-  // const blogPosts = [
-  //   {
-  //     image: "/assets/blogs/blog-01.png",
-  //     title: "Zuitt: Data Visualization Bootcamp Experience",
-  //     excerpt: "Explore the latest trends and technologies shaping the future of web development, from AI integration to WebAssembly.",
-  //     date: "Oct 05, 2024",
-  //     readTime: "5 min read",
-  //     category: "Data Visualization",
-  //     slug: "data-visualization-bootcamp-experience",
-  //     content: "Full content for Data Visualization Bootcamp...",
-  //   },
-  //   {
-  //     image: "/assets/blogs/blog-02.png",
-  //     title: "Javascript Game Development Bootcamp Experience",
-  //     excerpt: "Learn how to design and implement scalable applications using microservices architecture and cloud-native technologies.",
-  //     date: "February 08, 2025",
-  //     readTime: "8 min read",
-  //     category: "Game Development",
-  //     slug: "game-development-bootcamp-experience",
-  //     content: "Full content for JavaScript Game Development Bootcamp...",
-  //   },
-  //   {
-  //     image: "/assets/blogs/blog-03.png",
-  //     title: "Closing a Chapter: Saying Goodbye to My First Website Portfolio",
-  //     excerpt: "Discover key TypeScript features that can improve your code quality and development workflow.",
-  //     date: "Mar 28, 2025",
-  //     readTime: "6 min read",
-  //     category: "Website Development",
-  //     slug: "first-website-portfolio",
-  //     content: "Full content for Saying Goodbye to My First Website Portfolio...",
-  //   },
-  // ];
+  const blogPosts = [
+    {
+      image: "/assets/blogs/blog-01.jpg",
+      title: "Inside This Blog: What You’ll Discover",
+      excerpt: "A overview into the insights, tips, and inspiring stories waiting for you!",
+      date: "March 30, 2025",
+      readTime: "3 min read",
+      category: "Introduction",
+      slug: "https://technologywebdev15.substack.com/p/inside-this-blog-what-youll-discover"
+    },
+    {
+      image: "/assets/blogs/blog-02.jpg",
+      title: "My Journey into Website Development: How It All Began",
+      excerpt: "Humble Beginnings: Powered by Passion, Driven by Patience",
+      date: "April 02, 2025",
+      readTime: "10 min read",
+      category: "Career",
+      slug: "https://technologywebdev15.substack.com/p/my-journey-into-website-development"
+    }
+  ];
 
   interface HandleSubmitEvent extends FormEvent<HTMLFormElement> {}
 
@@ -594,18 +582,42 @@ function App() {
       </section>
 
 
-
-      {/* Blogs Section */}
-      <section id="blogs" className="py-32">
-        <div className="container mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl text-emerald-500 font-bold mb-6">Insightful Blog Posts Coming Soon</h2>
-            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              Exciting blog posts are in the works! I'll be sharing my thoughts, insights, and experiences soon—stay tuned!
-            </p>
-          </div>
+      {/* Blog Posts Section */}
+    <section id="blog" className="py-32">
+      <div className="container mx-auto px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl text-emerald-500 font-bold mb-6">Latest Blog Posts</h2>
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+            Explore my latest thoughts, tutorials, and insights on web development, 
+            programming, and tech industry trends.
+          </p>
         </div>
-      </section>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogPosts.map((post, index) => (
+            <BlogPost
+              key={index}
+              image={post.image}
+              title={post.title}
+              excerpt={post.excerpt}
+              date={post.date}
+              readTime={post.readTime}
+              category={post.category}
+              slug={post.slug}
+            />
+          ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <a 
+            href="https://technologywebdev15.substack.com/" 
+            className="inline-block bg-emerald-500 text-white px-6 py-3 rounded-full hover:bg-emerald-600 transition-colors duration-300"
+          >
+            View All Posts
+          </a>
+        </div>
+      </div>
+    </section>
 
 
 
@@ -613,33 +625,63 @@ function App() {
       <section id="announcements" className="py-32">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl text-emerald-500 font-bold mb-6">News & Highlights</h2>
+            <h2 className="text-4xl lg:text-5xl text-emerald-500 font-bold mb-6">
+              News & Highlights
+            </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
               Stay updated with the recent news and updates about my projects and professional journey.
             </p>
           </div>
+          
+          {/* Announcement Cards Container */}
           <div className="space-y-6">
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-emerald-500">Seeking Exciting New Projects 🚀</h3>
-                  <span className="text-gray-400 text-sm">April 01, 2025</span>
-                </div>
-                <p className="text-gray-300">
-                  Passionate web developer available for new opportunities. Let's collaborate to build innovative and high-quality digital solutions!
-                </p>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-emerald-500">📢 Our Newsletter Has Launched!</h3>
-                  <span className="text-gray-400 text-sm">March 30, 2025</span>
-                </div>
-                <p className="text-gray-300">
-                  Stay updated with the latest web development insights, tips, and trends delivered straight to your inbox. <strong>Subscribe now and never miss an update!</strong>
-                </p>
-              </div>
+
+            {/* Announcement 1 */}
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-emerald-500">Revamped Portfolio: A Sleek and Modern Experience</h3>
+                <h3 className="text-xl font-semibold text-emerald-500">
+                  Just Released: Blog Posts Are Available Now! 📖
+                </h3>
+                <span className="text-gray-400 text-sm">April 02, 2025</span>
+              </div>
+              <p className="text-gray-300">
+                The latest blog posts are now available! Stay updated with fresh insights and new content.
+              </p>
+            </div>
+
+            {/* Announcement 2 */}
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-emerald-500">
+                  Seeking Exciting New Projects 🚀
+                </h3>
+                <span className="text-gray-400 text-sm">April 01, 2025</span>
+              </div>
+              <p className="text-gray-300">
+                Passionate web developer available for new opportunities. Let's collaborate to build innovative and high-quality digital solutions!
+              </p>
+            </div>
+
+            {/* Announcement 3 */}
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-emerald-500">
+                  📢 Our Newsletter Has Launched!
+                </h3>
+                <span className="text-gray-400 text-sm">March 30, 2025</span>
+              </div>
+              <p className="text-gray-300">
+                Stay updated with the latest web development insights, tips, and trends delivered straight to your inbox. 
+                <strong> Subscribe now and never miss an update!</strong>
+              </p>
+            </div>
+
+            {/* Announcement 4 */}
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-emerald-500">
+                  Revamped Portfolio: A Sleek and Modern Experience
+                </h3>
                 <span className="text-gray-400 text-sm">March 28, 2025</span>
               </div>
               <p className="text-gray-300">
@@ -647,19 +689,10 @@ function App() {
                 platform with a modern design and enhanced details.
               </p>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-emerald-500">Completion of Web-Based POS, Inventory & Billing System Project</h3>
-                <span className="text-gray-400 text-sm">March 21, 2025</span>
-              </div>
-              <p className="text-gray-300">
-                Completed a web-based POS, inventory, and billing system using React, TypeScript, Tailwind CSS, and a serverless 
-                PostgreSQL database. It manages products, users, sales, and billing, with built-in business analytics charts for insights.
-              </p>
-            </div>
           </div>
         </div>
       </section>
+
 
       {/* Contact Section */}
       <section id="contact" className="py-32">
@@ -831,51 +864,55 @@ function ProjectCard({ image, title, description, tags, githubUrl }: ProjectCard
   );
 }
 
-// function BlogPost({ image, title, excerpt, date, readTime, category, slug }: BlogPostProps) {
-//   return (
-//     <article className="group bg-[#252525] rounded-xl overflow-hidden hover:shadow-lg 
-//       hover:shadow-emerald-500/10 transition-all duration-300">
-//       <div className="relative aspect-[16/9] overflow-hidden">
-//         <img 
-//           src={image} 
-//           alt={title}
-//           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-//         />
-//         <div className="absolute top-4 left-4">
-//           <span className="px-3 py-1 bg-emerald-500 text-white text-sm rounded-full">
-//             {category}
-//           </span>
-//         </div>
-//       </div>
-//       <div className="p-6">
-//         <div className="flex items-center space-x-4 text-sm text-gray-400 mb-4">
-//           <div className="flex items-center space-x-2">
-//             <Calendar className="w-4 h-4" />
-//             <span>{date}</span>
-//           </div>
-//           <div className="flex items-center space-x-2">
-//             <Clock className="w-4 h-4" />
-//             <span>{readTime}</span>
-//           </div>
-//         </div>
-//         <h3 className="text-xl font-bold mb-3 group-hover:text-emerald-500 transition-colors">
-//           {title}
-//         </h3>
-//         <p className="text-gray-400 text-sm mb-6">
-//           {excerpt}
-//         </p>
-//         <a
-//           href={`/blog/${slug}`}
-//           className="inline-flex items-center space-x-2 text-emerald-500 hover:text-emerald-400 
-//             transition-colors group/link"
-//         >
-//           <span>Read More</span>
-//           <ChevronRight className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" />
-//         </a>
-//       </div>
-//     </article>
-//   );
-// }
+function BlogPost({ image, title, excerpt, date, readTime, category, slug }: BlogPostProps) {
+  return (
+    <article className="group bg-[#252525] rounded-xl overflow-hidden hover:shadow-lg 
+      hover:shadow-emerald-500/10 transition-all duration-300">
+      <div className="relative aspect-[16/9] overflow-hidden">
+        <img 
+          src={image} 
+          alt={title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+        />
+        <div className="absolute top-4 left-4">
+          <span className="px-3 py-1 bg-emerald-500 text-white text-sm rounded-full">
+            {category}
+          </span>
+        </div>
+      </div>
+      <div className="p-6">
+        <div className="flex items-center space-x-4 text-sm text-gray-400 mb-4">
+          <div className="flex items-center space-x-2">
+            <Calendar className="w-4 h-4" />
+            <span>{date}</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Clock className="w-4 h-4" />
+            <span>{readTime}</span>
+          </div>
+        </div>
+        <h3 className="text-xl font-bold mb-3 group-hover:text-emerald-500 transition-colors">
+          {title}
+        </h3>
+        <p className="text-gray-400 text-sm mb-6">
+          {excerpt}
+        </p>
+        <a
+          href={slug} /* Use the slug directly as it already contains the full URL */
+          className="inline-flex items-center space-x-2 text-emerald-500 hover:text-emerald-400 
+            transition-colors group/link"
+         
+          target="_blank"
+          
+          rel="noopener noreferrer"
+        >
+          <span>Read More</span>
+          <ChevronRight className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" />
+        </a>
+      </div>
+    </article>
+  );
+}
 
 function ContactInfo({ icon, title, content }: ContactInfoProps) {
   return (
