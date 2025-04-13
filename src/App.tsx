@@ -161,6 +161,15 @@ function App() {
       readTime: "10 min read",
       category: "Career",
       slug: "https://technologywebdev15.substack.com/p/my-journey-into-website-development"
+    },
+    {
+      image: "/assets/blogs/blog-03.jpg",
+      title: "Pursuing Proficiency in Web Development: Capabilities with Modern Tools (WordPress, Webflow)",
+      excerpt: "Learning to Use Website Builders and Their Plugins as Tools for Website Development",
+      date: "April 13, 2025",
+      readTime: "8 min read",
+      category: "Website Builders",
+      slug: "https://technologywebdev15.substack.com/p/pursuing-proficiency-in-web-development"
     }
   ];
 
