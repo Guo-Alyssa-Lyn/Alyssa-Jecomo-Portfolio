@@ -10,7 +10,6 @@ import {
   BadgeAlert,
   Pen,
   Send,
-  Github,
   ChevronDown,
   ChevronUp,
   ChevronRight,
@@ -733,7 +732,7 @@ function App() {
               description="A modern e-commerce platform built with React, Node.js, and MongoDB. Features include real-time inventory, payment processing, and admin dashboard."
               tags={["Python", "Dash", "MySQL"]}
               githubUrl="https://github.com/Guo-Alyssa-Lyn/clinic_management_system"
-              // No live url
+              // only code - github link
             />
             <ProjectCard
               image="/assets/portfolio-works/portfolio-2.png"
@@ -749,7 +748,21 @@ function App() {
                 "Neon",
               ]}
               githubUrl="https://github.com/Guo-Alyssa-Lyn/Typescript-POS-Project"
-              // No live url
+              // only code - github link
+            />
+            <ProjectCard
+              image="/assets/portfolio-works/portfolio-3.png"
+              title="Business Online Store"
+              description="A company business online store built with WordPress and WooCommerce. Features include product catalog, shopping cart, secure payment processing and affiliate program."
+              tags={[
+                "WordPress",
+                "WooCommerce",
+                "HTML",
+                "CSS",
+                "JavaScript"
+              ]}
+              githubUrl="https://techxperts-ph.com/"
+              // has live url
             />
           </div>
           {/* <div className="text-center mt-12">
@@ -1066,8 +1079,7 @@ function ProjectCard({
             rel="noopener noreferrer"
             className="flex items-center space-x-2 text-sm text-gray-400 hover:text-emerald-500 transition-colors"
           >
-            <Github className="w-4 h-4" />
-            <span>Code</span>
+            <span>Code/Live</span>
           </a>
         </div>
       </div>
@@ -1153,9 +1165,6 @@ function ContactInfo({ icon, title, content }: ContactInfoProps) {
 }
 
 export default App;
-// function useParams(): { slug?: string } {
-//   return useRouterParams<{ slug: string }>();
-// }
 
 function customUseEffect(
   callback: () => void | (() => void),
