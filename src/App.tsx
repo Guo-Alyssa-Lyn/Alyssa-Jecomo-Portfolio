@@ -159,20 +159,11 @@ function App() {
 
   const blogPosts = [
     {
-      image: "/assets/blogs/blog-03.jpg",
-      title:
-        "Pursuing Proficiency in Web Development: Capabilities with Modern Tools (WordPress, Webflow)",
-      excerpt:
-        "Learning to Use Website Builders and Their Plugins as Tools for Website Development",
-      date: "April 13, 2025",
-      readTime: "8 min read",
-      category: "Website Builders",
-      slug: "https://technologywebdev15.substack.com/p/pursuing-proficiency-in-web-development",
-    },
-    {
       image: "/assets/blogs/blog-04.png",
-      title: "Website Development Roadmap: Learning Path for Aspiring Web Developers",
-      excerpt: "Everything You Need to Know to Start Website Development Learning Journey",
+      title:
+        "Website Development Roadmap: Learning Path for Aspiring Web Developers",
+      excerpt:
+        "Everything You Need to Know to Start Website Development Learning Journey",
       date: "May 04, 2025",
       readTime: "6 min read",
       category: "Learning Website Development",
@@ -186,6 +177,16 @@ function App() {
       readTime: "5 min read",
       category: "Artificial Intelligence",
       slug: "https://technologywebdev15.substack.com/p/the-rise-of-artificial-intelligence",
+    },
+    {
+      image: "/assets/blogs/blog-06.png",
+      title: "Have You Heard About Google’s Veo AI?",
+      excerpt:
+        "This next-gen video model might just change filmmaking forever.",
+      date: "June 04, 2025",
+      readTime: "10 min read",
+      category: "Artificial Intelligence",
+      slug: "https://technologywebdev15.substack.com/p/have-you-heard-about-googles-veo",
     },
   ];
 
@@ -754,13 +755,7 @@ function App() {
               image="/assets/portfolio-works/portfolio-3.png"
               title="Business Online Store"
               description="A company business online store built with WordPress and WooCommerce. Features include product catalog, shopping cart, secure payment processing and affiliate program."
-              tags={[
-                "WordPress",
-                "WooCommerce",
-                "HTML",
-                "CSS",
-                "JavaScript"
-              ]}
+              tags={["WordPress", "WooCommerce", "HTML", "CSS", "JavaScript"]}
               githubUrl="https://techxperts-ph.com/"
               // has live url
             />
@@ -834,6 +829,37 @@ function App() {
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-emerald-500">
+                  🔥 Just Published: What You Need to Know About Google’s Veo AI
+                  Blog
+                </h3>
+                <span className="text-gray-400 text-sm">June 04, 2025</span>
+              </div>
+              <p className="text-gray-300">
+                From mind-blowing video generation to next-level
+                creativity—discover how Google’s Veo AI is changing the game in
+                our latest blog post!
+              </p>
+            </div>
+
+            {/* Announcement 2 */}
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-emerald-500">
+                  🎥 I’m on TikTok — Watch My Tech Content!
+                </h3>
+                <span className="text-gray-400 text-sm">April 02, 2025</span>
+              </div>
+              <p className="text-gray-300">
+                Follow me for tech insights that boost your digital skills, and
+                keep you updated with the latest in tech—one short video at a
+                time.
+              </p>
+            </div>
+
+            {/* Announcement 3 */}
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-emerald-500">
                   Just Released: Blog Posts Are Available Now! 📖
                 </h3>
                 <span className="text-gray-400 text-sm">April 02, 2025</span>
@@ -844,7 +870,7 @@ function App() {
               </p>
             </div>
 
-            {/* Announcement 2 */}
+            {/* Announcement 4 */}
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-emerald-500">
@@ -856,36 +882,6 @@ function App() {
                 Passionate web developer available for new opportunities. Let's
                 collaborate to build innovative and high-quality digital
                 solutions!
-              </p>
-            </div>
-
-            {/* Announcement 3 */}
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-emerald-500">
-                  📢 Our Newsletter Has Launched!
-                </h3>
-                <span className="text-gray-400 text-sm">March 30, 2025</span>
-              </div>
-              <p className="text-gray-300">
-                Stay updated with the latest web development insights, tips, and
-                trends delivered straight to your inbox.
-                <strong> Subscribe now and never miss an update!</strong>
-              </p>
-            </div>
-
-            {/* Announcement 4 */}
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-emerald-500">
-                  Revamped Portfolio: A Sleek and Modern Experience
-                </h3>
-                <span className="text-gray-400 text-sm">March 28, 2025</span>
-              </div>
-              <p className="text-gray-300">
-                Upgraded my portfolio from a basic HTML, CSS, and JavaScript
-                site to a React-powered platform with a modern design and
-                enhanced details.
               </p>
             </div>
           </div>
