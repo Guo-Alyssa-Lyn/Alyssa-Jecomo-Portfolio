@@ -753,9 +753,18 @@ function App() {
             />
             <ProjectCard
               image="/assets/portfolio-works/portfolio-3.png"
-              title="Business Online Store"
-              description="A company business online store built with WordPress and WooCommerce. Features include product catalog, shopping cart, secure payment processing and affiliate program."
-              tags={["WordPress", "WooCommerce", "HTML", "CSS", "JavaScript"]}
+              title="WordPress-Powered Online Shop"
+              description="A company online shop built with WordPress and WooCommerce. Features include product catalog, shopping cart, secure payment processing and affiliate program."
+              tags={[
+                "WordPress",
+                "WooCommerce",
+                "SEO",
+                "WP Plugins",
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "PHP",
+              ]}
               githubUrl="https://techxperts-ph.com/"
               // has live url
             />
@@ -829,19 +838,32 @@ function App() {
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-emerald-500">
-                  🔥 Just Published: What You Need to Know About Google’s Veo AI
-                  Blog
+                  Developer Diaries: Starting As A React Frontend Developer 
                 </h3>
-                <span className="text-gray-400 text-sm">June 04, 2025</span>
+                <span className="text-gray-400 text-sm">Aug 26, 2025</span>
               </div>
               <p className="text-gray-300">
-                From mind-blowing video generation to next-level
-                creativity—discover how Google’s Veo AI is changing the game in
-                our latest blog post!
+                After going through the developer exam, what did happen next? Did I passed the exam? Get to know that
+                in my next blog post. After reading this blog post, you'll have an idea how to prepare for the exam
+                and what to expect.
               </p>
             </div>
 
             {/* Announcement 2 */}
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-emerald-500">
+                  Hunting Developer Jobs: I Applied As React Frontend Developer at Codebility! Did I Passed?
+                </h3>
+                <span className="text-gray-400 text-sm">Aug 24, 2025</span>
+              </div>
+              <p className="text-gray-300">
+                I keep on job hunting for developers job despite of small chance as an individual with freelancing
+                experience and no college degree.
+              </p>
+            </div>
+
+            {/* Announcement 3 */}
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-emerald-500">
@@ -853,20 +875,6 @@ function App() {
                 Follow me for tech insights that boost your digital skills, and
                 keep you updated with the latest in tech—one short video at a
                 time.
-              </p>
-            </div>
-
-            {/* Announcement 3 */}
-            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-emerald-500">
-                  Just Released: Blog Posts Are Available Now! 📖
-                </h3>
-                <span className="text-gray-400 text-sm">April 02, 2025</span>
-              </div>
-              <p className="text-gray-300">
-                The latest blog posts are now available! Stay updated with fresh
-                insights and new content.
               </p>
             </div>
 
