@@ -10,8 +10,6 @@ import {
   BadgeAlert,
   Pen,
   Send,
-  ChevronDown,
-  ChevronUp,
   ChevronRight,
   Calendar,
   Clock,
@@ -48,14 +46,6 @@ interface CertificationProps {
   issuer: string;
   date: string;
   image: string;
-}
-
-interface TechStackItem {
-  id: number;
-  name: string;
-  bgColor: string;
-  textColor: string;
-  category: string;
 }
 
 interface BlogPostProps {
@@ -227,232 +217,56 @@ function App() {
     }));
   };
 
-  const TechStacks: React.FC = () => {
-    const techStack: TechStackItem[] = [
-      // Frontend
-      {
-        id: 1,
-        name: "React",
-        bgColor: "bg-blue-400",
-        textColor: "text-white",
-        category: "Frontend",
-      },
-      {
-        id: 2,
-        name: "TypeScript",
-        bgColor: "bg-blue-600",
-        textColor: "text-white",
-        category: "Frontend",
-      },
-      {
-        id: 3,
-        name: "JavaScript",
-        bgColor: "bg-yellow-300",
-        textColor: "text-black",
-        category: "Frontend",
-      },
-      {
-        id: 5,
-        name: "Next.js",
-        bgColor: "bg-gray-300",
-        textColor: "text-black",
-        category: "Frontend",
-      },
-      {
-        id: 6,
-        name: "Tailwind",
-        bgColor: "bg-cyan-500",
-        textColor: "text-white",
-        category: "Frontend",
-      },
-      {
-        id: 10,
-        name: "Bootstrap",
-        bgColor: "bg-purple-500",
-        textColor: "text-white",
-        category: "Frontend",
-      },
+    // Infinite Text Marquee Component To Showcase A Continuous Loop of Text
+    const TechStacksDisplay: React.FC = () => {
+  const texts = [
+    "React JS",
+    "Node.js",
+    "JavaScript",
+    "PHP",
+    "Python",
+    "TypeScript",
+    "Vite",
+    "MySQL",
+  ];
 
-      // Backend
-      {
-        id: 4,
-        name: "Node.js",
-        bgColor: "bg-green-500",
-        textColor: "text-white",
-        category: "Backend",
-      },
-      {
-        id: 7,
-        name: "Python",
-        bgColor: "bg-yellow-400",
-        textColor: "text-black",
-        category: "Backend",
-      },
-      {
-        id: 8,
-        name: "MySQL",
-        bgColor: "bg-blue-500",
-        textColor: "text-white",
-        category: "Backend",
-      },
-      {
-        id: 9,
-        name: "PostgreSQL",
-        bgColor: "bg-indigo-400",
-        textColor: "text-white",
-        category: "Backend",
-      },
-      {
-        id: 15,
-        name: "Dash",
-        bgColor: "bg-green-400",
-        textColor: "text-white",
-        category: "Backend",
-      },
+  return (
+    <div className="relative overflow-hidden bg-gray-50 py-6">
+      {/* Fade edges */}
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-gray-50 to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-gray-50 to-transparent" />
 
-      // Design Tools
-      {
-        id: 13,
-        name: "Lunacy",
-        bgColor: "bg-gray-400",
-        textColor: "text-black",
-        category: "Design Tools",
-      },
-      {
-        id: 14,
-        name: "Figma",
-        bgColor: "bg-pink-500",
-        textColor: "text-white",
-        category: "Design Tools",
-      },
+      {/* Marquee wrapper */}
+      <div className="marquee flex space-x-10 whitespace-nowrap">
+        {[...texts, ...texts].map((text, index) => (
+          <span
+            key={index}
+            className="text-xl font-semibold text-gray-600"
+          >
+            {text}
+          </span>
+        ))}
+      </div>
 
-      // Other Tools
-      {
-        id: 11,
-        name: "Git",
-        bgColor: "bg-orange-500",
-        textColor: "text-white",
-        category: "Other Tools",
-      },
-      {
-        id: 12,
-        name: "VS Code",
-        bgColor: "bg-blue-400",
-        textColor: "text-white",
-        category: "Other Tools",
-      },
-      {
-        id: 16,
-        name: "Android Studio",
-        bgColor: "bg-green-600",
-        textColor: "text-white",
-        category: "Other Tools",
-      },
-    ];
+      <style>
+        {`
+          @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .marquee {
+            display: flex;
+            min-width: 200%;
+            transform: translateX(-25%); /* ✅ Start in the middle */
+            animation: marquee 25s linear infinite;
+            will-change: transform;
+          }
+        `}
+      </style>
+    </div>
+  );
+};
 
-    // Use separate state for each category to avoid state conflicts
-    const [expandedFrontend, setExpandedFrontend] = useState(false);
-    const [expandedBackend, setExpandedBackend] = useState(false);
-    const [expandedDesignTools, setExpandedDesignTools] = useState(false);
-    const [expandedOtherTools, setExpandedOtherTools] = useState(false);
-
-    // Get expanded state for a specific category
-    const isExpanded = (category: string): boolean => {
-      switch (category) {
-        case "Frontend":
-          return expandedFrontend;
-        case "Backend":
-          return expandedBackend;
-        case "Design Tools":
-          return expandedDesignTools;
-        case "Other Tools":
-          return expandedOtherTools;
-        default:
-          return false;
-      }
-    };
-
-    // Toggle specific category
-    const toggleCategory = (category: string, event: React.MouseEvent) => {
-      event.preventDefault();
-      event.stopPropagation();
-
-      switch (category) {
-        case "Frontend":
-          setExpandedFrontend(!expandedFrontend);
-          break;
-        case "Backend":
-          setExpandedBackend(!expandedBackend);
-          break;
-        case "Design Tools":
-          setExpandedDesignTools(!expandedDesignTools);
-          break;
-        case "Other Tools":
-          setExpandedOtherTools(!expandedOtherTools);
-          break;
-      }
-    };
-
-    // Group techs by category
-    const categories = ["Frontend", "Backend", "Design Tools", "Other Tools"];
-
-    return (
-      <section className="bg-[#1f1f1f] py-12 pb-48 flex flex-col items-center relative">
-        <h3 className="text-3xl font-bold text-white mb-16 z-10 relative">
-          Tech Stacks
-        </h3>
-
-        <div className="w-full max-w-5xl px-4 space-y-6">
-          {categories.map((category) => {
-            const categoryItems = techStack.filter(
-              (tech) => tech.category === category
-            );
-
-            return (
-              <div
-                key={category}
-                className="bg-gray-800 rounded-lg overflow-hidden shadow-lg"
-              >
-                {/* Category Header */}
-                <div
-                  className="w-full flex justify-between items-center p-4 cursor-pointer bg-gray-700 hover:bg-gray-600 text-left"
-                  onClick={(e) => toggleCategory(category, e)}
-                >
-                  <h4 className="text-2xl font-semibold text-white">
-                    {category}
-                  </h4>
-                  <div className="flex items-center">
-                    {isExpanded(category) ? (
-                      <ChevronUp className="text-white w-6 h-6" />
-                    ) : (
-                      <ChevronDown className="text-white w-6 h-6" />
-                    )}
-                  </div>
-                </div>
-
-                {/* Category Content */}
-                {isExpanded(category) && (
-                  <div className="p-6">
-                    <div className="flex flex-wrap gap-4">
-                      {categoryItems.map((tech) => (
-                        <div
-                          key={tech.id}
-                          className={`${tech.bgColor} ${tech.textColor} p-4 rounded-lg shadow-md text-xl 
-                          font-semibold w-48 flex-shrink-0 text-center`}
-                        >
-                          {tech.name}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </section>
-    );
-  };
 
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-white">
@@ -633,6 +447,9 @@ function App() {
             </div>
           </div>
 
+          {/* Tech Stacks Section */}
+          {/* <TechStacksDisplay />   - Temporarily Hidden */}
+
           {/* Certifications section */}
           <div className="mt-32">
             <h3 className="text-3xl font-bold text-center mb-16">
@@ -668,9 +485,6 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* Tech Stacks Section */}
-      <TechStacks />
 
       {/* Services Section */}
       <section id="services" className="py-32">
@@ -819,7 +633,8 @@ function App() {
         </div>
       </section>
 
-      {/* Announcements Section */}
+      {/* Temporarily Hidden Announcements Section ===============================================
+      {/* Announcements Section 
       <section id="announcements" className="py-32">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
@@ -832,9 +647,9 @@ function App() {
             </p>
           </div>
 
-          {/* Announcement Cards Container */}
+          {/* Announcement Cards Container *
           <div className="space-y-6">
-            {/* Announcement 1 */}
+            {/* Announcement 1 
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-emerald-500">
@@ -849,7 +664,7 @@ function App() {
               </p>
             </div>
 
-            {/* Announcement 2 */}
+            {/* Announcement 2 
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-emerald-500">
@@ -863,7 +678,7 @@ function App() {
               </p>
             </div>
 
-            {/* Announcement 3 */}
+            {/* Announcement 3 
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-emerald-500">
@@ -878,7 +693,7 @@ function App() {
               </p>
             </div>
 
-            {/* Announcement 4 */}
+            {/* Announcement 4 
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 transition-all duration-300 hover:border-emerald-500">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-emerald-500">
@@ -895,6 +710,7 @@ function App() {
           </div>
         </div>
       </section>
+      =========================================================================================*/}
 
       {/* Contact Section */}
       <section id="contact" className="py-32">
