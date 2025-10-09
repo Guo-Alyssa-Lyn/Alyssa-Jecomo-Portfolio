@@ -345,17 +345,16 @@ function App() {
                   </h2>
                   <h3 className="text-2xl font-bold mb-4">My Journey</h3>
                   <p className="text-gray-400 leading-relaxed">
-                    My web development journey began in 2016 when, driven by
-                    passion and curiosity, I started exploring website
-                    development with the dream of becoming a skilled developer.
-                    Through experimentation and hands-on learning, I discovered
-                    a deep appreciation for building websites and software,
-                    which allowed me to develop a strong foundation in the
-                    field. In 2024, after transitioning from an office job, I
-                    took the leap into freelancing to pursue my dream career. I
-                    am thrilled to have embarked on this path and remain
-                    committed to delivering high-quality solutions while serving
-                    my clients with dedication.
+                    My professional journey in web development commenced in 2016, 
+                    driven by a deep passion for technology and a commitment to 
+                    mastering the craft of digital innovation. Through continuous 
+                    learning, practical experience, and a strong focus on technical 
+                    excellence, I built a solid foundation in website and software 
+                    development. In 2024, following a successful transition from a 
+                    corporate role, I pursued full-time freelancing to align my career 
+                    with my long-term vision. Today, I remain dedicated to delivering 
+                    high-quality, results-oriented solutions while upholding the 
+                    highest standards of professionalism and client satisfaction.
                   </p>
                 </div>
                 <div>
@@ -393,7 +392,7 @@ function App() {
                           Website Security Practices
                         </p>
                         <div className="h-2 bg-[#252525] rounded-full">
-                          <div className="h-full w-[50%] bg-emerald-500 rounded-full" />
+                          <div className="h-full w-[30%] bg-emerald-500 rounded-full" />
                         </div>
                       </div>
                     </div>
@@ -416,18 +415,18 @@ function App() {
                       </div>
                       <div>
                         <p className="text-sm text-gray-400 mb-1">
-                          Project Management
+                          CMS Development
                         </p>
                         <div className="h-2 bg-[#252525] rounded-full">
-                          <div className="h-full w-[30%] bg-emerald-500 rounded-full" />
+                          <div className="h-full w-[50%] bg-emerald-500 rounded-full" />
                         </div>
                       </div>
                       <div>
                         <p className="text-sm text-gray-400 mb-1">
-                          Performance Optimization
+                          Search Engine & Performance Optimization
                         </p>
                         <div className="h-2 bg-[#252525] rounded-full">
-                          <div className="h-full w-[30%] bg-emerald-500 rounded-full" />
+                          <div className="h-full w-[40%] bg-emerald-500 rounded-full" />
                         </div>
                       </div>
                     </div>
@@ -543,26 +542,25 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ProjectCard
               image="/assets/portfolio-works/portfolio-1.png"
-              title="Clinic Management System"
-              description="A modern e-commerce platform built with React, Node.js, and MongoDB. Features include real-time inventory, payment processing, and admin dashboard."
+              title="Clinic Management System (Python Dash Project)"
+              description="A Python Dash web app designed to streamline clinic operations by managing appointments, patients, payments, and schedules in one dashboard. It offers real-time analytics, database integration, and efficient data management, ensuring a smooth and organized workflow for clinic staff."
               tags={["Python", "Dash", "MySQL"]}
               githubUrl="https://github.com/Guo-Alyssa-Lyn/clinic_management_system"
               // only code - github link
             />
             <ProjectCard
               image="/assets/portfolio-works/portfolio-2.png"
-              title="POS-Inventory-Billing System"
-              description="A collaborative task management application with real-time updates, team chat, and project analytics."
+              title="NARA Fashion Clothing - Shopify Website"
+              description="A high-end fashion store built on Shopify CMS — combining luxury design with powerful eCommerce features. It enables seamless product showcasing, secure payments, and easy management of collections, orders, and marketing through Shopify’s integrated tools."
               tags={[
-                "React",
-                "Typescript",
-                "TailwindCSS",
-                "NodeJS",
-                "PostgreSQL",
-                "Prisma",
-                "Neon",
+                "Shopify",
+                "CMS",
+                "Shopify App",
+                "HTML",
+                "CSS",
+                "Javascript",
               ]}
-              githubUrl="https://github.com/Guo-Alyssa-Lyn/Typescript-POS-Project"
+              githubUrl="https://nara-fashion-cloth.myshopify.com/"
               // only code - github link
             />
             <ProjectCard
