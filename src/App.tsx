@@ -2,7 +2,6 @@ import React, { useState, FormEvent, ChangeEvent } from "react";
 import {
   Code2,
   Cuboid,
-  Palette,
   BarChart3,
   Mail,
   Phone,
@@ -13,6 +12,7 @@ import {
   ChevronRight,
   Calendar,
   Clock,
+  Newspaper
 } from "lucide-react";
 import { useTypewriter } from "./hooks/useTypewriter";
 import { useScrollLock } from "./hooks/useScrollLock";
@@ -503,9 +503,9 @@ function App() {
               description="Crafting visually cohesive and captivating brand identities for websites, ensuring consistency in logos, color palettes, typography, and design elements to enhance brand recognition and user experience."
             />
             <ServiceCard
-              icon={<Palette className="w-10 h-10" />}
-              title="UI/UX Design"
-              description="Designing intuitive and visually engaging interfaces using modern design principles to enhance user experience and accessibility."
+              icon={<Newspaper className="w-10 h-10" />}
+              title="Quality Assurance"
+              description="Ensuring your digital products perform flawlessly through thorough testing, bug identification, and validation — delivering a polished, error-free experience for your end users."
             />
             <ServiceCard
               icon={<BadgeAlert className="w-10 h-10" />}
@@ -549,35 +549,31 @@ function App() {
               // only code - github link
             />
             <ProjectCard
-              image="/assets/portfolio-works/portfolio-2.png"
-              title="NARA Fashion Clothing - Shopify Website"
-              description="A high-end fashion store built on Shopify CMS — combining luxury design with powerful eCommerce features. It enables seamless product showcasing, secure payments, and easy management of collections, orders, and marketing through Shopify’s integrated tools."
+              image="/assets/portfolio-works/scaffolding-services_coverimage.png"
+              title="WordPress Elementor - Firmfix Scaffolding"
+              description="A professional WordPress website designed with Elementor for a scaffolding company, featuring a bold and industrial aesthetic that communicates reliability and expertise, with dedicated sections for services, project galleries, safety credentials, and a streamlined contact and quote request system."
               tags={[
-                "Shopify",
-                "CMS",
-                "Shopify App",
-                "HTML",
-                "CSS",
-                "Javascript",
+                "WordPress",
+                "Template Customization",
+                "Elementor",
+                "MathSEO",
+                "TrustIndex Review",
               ]}
-              githubUrl="https://nara-fashion-cloth.myshopify.com/"
+              githubUrl="https://firmfix-scaffolding.co.uk/"
               // only code - github link
             />
             <ProjectCard
-              image="/assets/portfolio-works/portfolio-3.png"
-              title="WordPress-Powered Online Shop"
-              description="A company online shop built with WordPress and WooCommerce. Features include product catalog, shopping cart, secure payment processing and affiliate program."
+              image="/assets/portfolio-works/bw-handyman-services_coverimage.png"
+              title="WordPress Elementor - BW Handyman Services"
+              description="A responsive WordPress website built with Elementor for a local handyman business, featuring a clean and professional design that highlights services, showcases past work, and makes it easy for clients to request quotes and get in touch."
               tags={[
                 "WordPress",
-                "WooCommerce",
+                "Elementor",
                 "SEO",
                 "WP Plugins",
-                "HTML",
-                "CSS",
-                "JavaScript",
-                "PHP",
+                "Template Customization",
               ]}
-              githubUrl="https://techxperts-ph.com/"
+              githubUrl="https://bwpm.uk/"
               // has live url
             />
           </div>
@@ -754,6 +750,7 @@ function App() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
+                      placeholder="Your full name"
                       className="w-full px-4 py-3 bg-[#252525] rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-colors text-white"
                       required
                     />
@@ -771,6 +768,7 @@ function App() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
+                      placeholder="youremail@example.com"
                       className="w-full px-4 py-3 bg-[#252525] rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-colors text-white"
                       required
                     />
@@ -789,6 +787,7 @@ function App() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
+                    placeholder="Subject Title"
                     className="w-full px-4 py-3 bg-[#252525] rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-colors text-white"
                     required
                   />
@@ -806,6 +805,7 @@ function App() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
+                    placeholder="Send your project inquiry details..."
                     className="w-full px-4 py-3 bg-[#252525] rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-colors text-white resize-none"
                     required
                   />
