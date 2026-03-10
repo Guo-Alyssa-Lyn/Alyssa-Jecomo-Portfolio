@@ -64,7 +64,7 @@ export default function Footer() {
                   <ul className="space-y-4">
                     <li className="text-gray-400">Frontend Development</li>
                     <li className="text-gray-400">Website Branding</li>
-                    <li className="text-gray-400">UI/UX Design</li>
+                    <li className="text-gray-400">Quality Assurance</li>
                     <li className="text-gray-400">Website Maintenance & Support</li>
                     <li className="text-gray-400">Backend Development</li>
                     <li className="text-gray-400">Search Engine Optimization (SEO)</li>
